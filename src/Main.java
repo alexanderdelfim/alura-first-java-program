@@ -16,5 +16,9 @@ public class Main {
             """.formatted(launchYear, average, synopsis);
 
         System.out.println(fullSynopsis);
+
+        int classification = (int) average / 2;
+
+        System.out.println("Classification: " + classification);
     }
 }
