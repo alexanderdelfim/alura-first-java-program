@@ -35,9 +35,37 @@ public class Challenge {
         while (operationNumber != 4) {
             System.out.println(menu);
             operationNumber = reader.nextInt();
+
+            switch (operationNumber) {
+                case 1:
+                    System.out.println("R$ " + balance);
+
+                    break;
+                case 2:
+                    System.out.println("Informe o valor a receber: ");
+                    double receiveValue = reader.nextDouble();
+                    balance += receiveValue;
+                    System.out.println("Saldo atualizado R$ " + balance);
+
+                    break;
+                case 3:
+                    System.out.println("Informe o valor que deseja transferir: ");
+                    double sendValue = reader.nextDouble();
+
+                    if (balance < sendValue) {
+                        System.out.println("Não há saldo suficiente para fazer essa transferência.");
+                    } else {
+                        balance -= sendValue;
+                        System.out.println("Saldo atualizado R$ " + balance);
+                    }
+
+                    break;
+                default:
+                    System.out.println("Desculpe, a opção que você digitopu não esta listada nas operações disponives, favor selecionar uma das operações abaixo: ");
+                    break;
+            }
         }
 
         reader.close();
     }
-
 }
